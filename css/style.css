@@ -1,0 +1,174 @@
+/*variables*/
+:root {
+    --colorRojo: #c80000;
+    --colorHiperviculos: #444444;
+}
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+/* globales*/
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+li {
+    list-style: none;
+    line-height:32px ;
+}
+body {
+    background-image: url("../images/bg-body.png");
+}
+.container {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 10px;/*(se cambia por margin version tablet y escritorio)*/
+}
+.container .main-header {
+    text-align: center;
+}
+.container .main-header img {
+    width: 180px;
+    border-radius: 50%;
+    padding: 15px 0 30px 0;
+}
+.container .main-header a.toggle-nav {
+    display:block;
+    margin-bottom: 30px;
+}
+.container .main-header a.toggle-nav span {
+    background-color: var(--colorHiperviculos);
+    padding: 7px;
+}
+.container .main-nav ul li {
+    background-color: var(--colorHiperviculos);
+    border:solid 1px white;
+}
+.container .banner {
+    display: none;
+}
+.container .vip-products {
+    width: 100%;
+    margin: 30px 0;
+}
+.container .vip-products .product {
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 30px;
+}
+.container .vip-products .product .photo-container {
+    width: 100%;
+    position: relative;
+}
+.container .vip-products .product .photo-container .photo {
+    width: 100%;
+}
+.container .vip-products .product .photo-container .special {
+    position: absolute;
+    right: 10px;
+    top:0;
+}
+.container .vip-products .product .photo-container a {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    top:40%;
+}
+.container .vip-products .product h2 {
+    padding-top: 15px;
+}
+.container .vip-products .product p {
+    padding: 15px 0;
+}
+.container .vip-products .product a.more{
+    width: 200px;
+    padding: 4px;
+    text-transform: initial;
+    background-color: var(--colorHiperviculos);
+}
+.container .main-footer {
+    width: 100%;
+    background-color: var(--colorRojo);
+    text-align: center;
+}
+.container .main-footer ul li {
+    border: solid 1px white;
+}
+/*VERSION PARA TABLETS */
+@media only screen and (min-device-width : 460px) {
+    .container .main-header a.toggle-nav {
+        display: none;
+    }
+    .container .main-header .main-nav ul {
+        margin: auto;
+        font-size: 0;
+    }
+    .container .main-header .main-nav ul li:nth-child(n) {
+        display: inline-block;
+        font-size: 16px;
+        width: 107px;
+        line-height: 50px;
+        margin-right: 20px;
+    }
+    .container .main-header .main-nav ul li:nth-child(6) {
+        margin:0;
+    }
+    .container .banner {
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 1180px;
+    }
+    .container .banner img {
+        width: 100%;
+    }
+    .container .vip-products {
+        overflow: hidden;
+    }
+    .container .vip-products .product {
+        float: left;
+        width: calc(50% - 10px )
+    }
+    .container .vip-products .product:nth-child(odd){
+        margin-right: 20px;
+        width: calc(50% - 10px);
+    }
+}
+/*VERSION PARA Y ESCRITORIO*/
+@media only screen and (min-device-width : 768px) {
+    .container { 
+        padding: 0;
+        margin: 0 auto;
+    }
+    .container .main-header .main-nav ul li:nth-child(n){
+        width: 180px;
+    }
+    .container .vip-products .product:nth-child(n){
+        width: calc(33.33% - 13.33px);
+        max-width: 380px;
+        margin-right: 20px;
+    }
+    .container .vip-products .product:nth-child(3n){
+        margin:0;
+    }
+    .container .main-footer {
+        height: 150px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        line-height: 150px;
+    }
+    .container .main-footer ul li {
+        display:inline-block;
+        border:none;
+        padding: 0 10px;
+    }
+    .container .main-footer ul li:nth-child(1n+2) {
+        line-height: 16px;
+        border-left: solid 2px white;
+    }   
+}
